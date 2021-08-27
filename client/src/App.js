@@ -1,4 +1,4 @@
-A// export default App;
+// export default App;
 import React from "react";
 import {
   ApolloClient,
