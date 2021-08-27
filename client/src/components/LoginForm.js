@@ -37,8 +37,8 @@ const LoginForm = () => {
       });
       const token = mutationResponse.data.addUser.token;
       Auth.login(token);
-    } catch (err) {
-      console.error(err);
+    } catch (error) {
+      console.error(error);
       setShowAlert(true);
     }
 

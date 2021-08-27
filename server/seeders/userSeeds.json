@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Jane Doe",
+    "email": "JaneDoe@email.com",
+    "password": "password1"
+  },
+  {
+    "name": "John Doe",
+    "email": "JohnDoe@email.com",
+    "password": "password2"
+  },
+  {
+    "name": "Ann Smith",
+    "email": "AnnSmith@email.com",
+    "password": "password3"
+  },
+  {
+    "name": "Kevin Smith",
+    "email": "KevinSmith@email.com",
+    "password": "password4"
+  },
+  {
+    "name": "George Washington",
+    "email": "GeorgeWashigton@email.com",
+    "password": "password5"
+  },
+  {
+    "name": "Alan Doe",
+    "email": "AlanDoe@email.com",
+    "password": "password6"
+  }
+]
