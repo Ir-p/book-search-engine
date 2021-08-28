@@ -47,14 +47,7 @@ const SignupForm = () => {
       console.error(err);
       setShowAlert(true);
     }
-
-    setUserFormData({
-      username: "",
-      email: "",
-      password: "",
-    });
-  };
-
+  }
   return (
     <>
       {/* This is needed for the validation functionality above */}
