@@ -6,7 +6,7 @@ import {
   Form,
   Button,
   Card,
-  CardColumns,
+  CardColumns
 } from "react-bootstrap";
 
 import { useMutation, useQuery } from "@apollo/client";
