@@ -4,9 +4,6 @@ const { signToken } = require("../utils/auth.js");
 
 const resolvers = {
   Query: {
-    user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
-    },
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
@@ -39,30 +36,26 @@ const resolvers = {
 
     saveBook: async (parent, { bookData }, context) => {
       if (context.user) {
-        const userUpdate = new UserUpdate({ bookData });
-        await User.findByIdAndUpdate(context.user._id, {
-          $push: { savedBooks: bookData },
-        });
+        const userUpdate = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          {
+            $push: { savedBooks: bookData },
+          },
+          { new: true }
+        );
         return userUpdate;
       }
       throw new AuthenticationError("Login to save books");
     },
-    updateUser: async (parent, args, context) => {
-      if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, {
-          new: true,
-        });
-      }
 
-      throw new AuthenticationError("Login to save books");
-    },
-
-    removeBook: async (parent, { bookData }, context) => {
+    removeBook: async (parent, { bookId }, context) => {
       if (context.user) {
-        const userUpdate = new UserUpdate({ bookData });
-        await User.findByIdAndUpdate(context.user._id, {
-          $pull: { savedBooks: bookData },
-        });
+        const userUpdate = await User.findByIdAndUpdate(
+          { _id: context.user._id },
+          {
+            $pull: { savedBooks: bookId },
+          },
+          { new: true });
         return userUpdate;
       }
       throw new AuthenticationError("Login to save books");

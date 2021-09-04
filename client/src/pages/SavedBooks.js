@@ -12,7 +12,7 @@ import { QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
 
 
-const SavedBooks = ({ books}) => {
+const SavedBooks = ({ books }) => {
   const [removeBook] = useMutation(REMOVE_BOOK);
   const { loading, data} = useQuery(QUERY_ME);
   const userData = data?.me || {};
@@ -23,7 +23,7 @@ const SavedBooks = ({ books}) => {
       return false
     }
     try {
-      const { data } = await removeBook({
+      const { bookId } = await removeBook({
         variables: { bookId },
       });
 
