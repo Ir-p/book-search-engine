@@ -4,10 +4,10 @@ This app is a book search engine that uses third party API.
 ## Getting Started
 * clone me, or fork me
   
-🌎 live at: [reactPortofolio link]()
+🌎 live at: [reactPortofolio link](https://book-search-engine-75.herokuapp.com/)
 
 Screen shot of the deployed app:
-![Screenshot:]()
+![Screenshot:](./Assets/screenshot.png)
 
 ## Deployment
 
