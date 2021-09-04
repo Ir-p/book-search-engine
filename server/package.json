@@ -5,9 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "watch": "nodemon server.js",
-    "seed": "node config/seeds.js",
-    "heroku-postbuild": "cd client && npm i && cd ../server && npm run seed && cd ../client && npm run build"
+    "watch": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
